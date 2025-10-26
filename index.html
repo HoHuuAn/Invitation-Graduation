@@ -148,7 +148,7 @@
         
         when: {
           turning: function (event, page, view) {
-            // startMusic();
+            startMusic();
             updatePageInfo(page);
           },
           turned: function (event, page, view) {
@@ -224,18 +224,6 @@
         $(".flipbook").turn("size", newWidth, newHeight);
       });
 
-    //   Generate animated stars
-      const starsContainer = document.querySelector('.stars');
-      const starCount = 50;
-
-      for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        star.style.left = `${Math.random() * 100}%`;
-        star.style.animationDelay = `${Math.random() * 9}s`;
-        star.style.animationDuration = `${Math.random() * 5 + 7}s`;
-        starsContainer.appendChild(star);
-      }
     });
   </script>
 </body>

@@ -31,7 +31,7 @@ body {
 /* ============================= */
 
 .bg {
-  background: url(https://i.ibb.co/87GbbFP/2799006.jpg) no-repeat center center;
+  background: url(/images/background.jpg) no-repeat center center;
   background-size: cover;
   position: fixed;
   top: 0;
