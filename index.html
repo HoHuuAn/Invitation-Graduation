@@ -80,7 +80,6 @@
 
   <div class="flipbook">
     <div class="hard"><img src="pages/1.png" alt="Page 1"></div>
-    <div class="hard"></div>
     <div class=""><img src="pages/2.png" alt="Page 2"></div>
     <div class=""><img src="pages/3.png" alt="Page 3"></div>
     <div class=""><img src="pages/4.png" alt="Page 4"></div>
@@ -88,6 +87,7 @@
     <div class=""><img src="pages/6.png" alt="Page 6"></div>
     <div class=""><img src="pages/7.png" alt="Page 7"></div>
     <div class=""><img src="pages/8.png" alt="Page 8"></div>
+    <!-- <div class="hard hard-back"></div> -->
   </div>
 
   <!-- Background Music -->
@@ -121,6 +121,9 @@
       const windowHeight = $(window).height();
       const windowWidth = $(window).width();
 
+      // Detect mobile devices
+      const isMobile = windowWidth <= 768;
+
       // Use full available height minus padding
       const bookHeight = windowHeight - 80;
       const bookWidth = bookHeight * 1.5; // 3:2 ratio for double page
@@ -135,16 +138,14 @@
       }
 
       // Initialize the flipbook
-      $(".flipbook").turn({
-        width: finalWidth,
-        height: finalHeight,
+      const flipbookOptions = {
         autoCenter: true,
         elevation: 50,
         gradients: true,
-        duration: 1000,
+        duration: 1500,
         pages: 8,
         acceleration: true,
-        display: 'double',
+        display: isMobile ? 'single' : 'double',
         
         when: {
           turning: function (event, page, view) {
@@ -161,7 +162,21 @@
             startMusic();
           }
         }
-      });
+      };
+
+      // Add width and height only for desktop
+      if (!isMobile) {
+        flipbookOptions.width = finalWidth;
+        flipbookOptions.height = finalHeight;
+      }
+
+      $(".flipbook").turn(flipbookOptions);
+      
+      // Hide hard back cover on mobile
+      if (isMobile) {
+        $('.hard-back').hide();
+      }
+      
       startMusic();
       // Update page navigation buttons
       function updatePageInfo(page) {
@@ -209,6 +224,7 @@
       $(window).resize(function () {
         const windowHeight = $(window).height();
         const windowWidth = $(window).width();
+        const isMobileResize = windowWidth <= 768;
 
         const bookHeight = windowHeight - 80;
         const bookWidth = bookHeight * 1.5;
@@ -221,7 +237,16 @@
           newHeight = newWidth / 1.5;
         }
 
-        $(".flipbook").turn("size", newWidth, newHeight);
+        // Only set size for desktop, mobile handles it automatically
+        if (!isMobileResize) {
+          $(".flipbook").turn("size", newWidth, newHeight);
+          $('.hard-back').show();
+        } else {
+          $('.hard-back').hide();
+        }
+
+        // Update display mode based on screen size
+        $(".flipbook").turn("display", isMobileResize ? "single" : "double");
       });
 
     });
