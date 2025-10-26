@@ -31,7 +31,7 @@ body {
 /* ============================= */
 
 .bg {
-  background: url(/images/background.jpg) no-repeat center center;
+  background: url(/images/main-background.jpg) no-repeat center center;
   background-size: cover;
   position: fixed;
   top: 0;
