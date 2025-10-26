@@ -4,8 +4,10 @@
 
 /* Define primary color and other reusable variables */
 :root {
-  --primary-color: #ffffff; /* Star color */
-  --bg-overlay-color: rgba(0, 0, 0, 0.3); /* Overlay color */
+  --primary-color: #ffffff;
+  /* Star color */
+  --bg-overlay-color: rgba(0, 0, 0, 0.3);
+  /* Overlay color */
   --fall-duration: 9s;
   --tail-fade-duration: var(--fall-duration);
   --star-count: 50;
@@ -31,7 +33,7 @@ body {
 /* ============================= */
 
 .bg {
-  background: url(/images/main-background.jpg) no-repeat center center;
+  background: url(images/background.jpg) no-repeat center center;
   background-size: cover;
   position: fixed;
   top: 0;
@@ -75,52 +77,52 @@ body {
   height: 4px;
   border-radius: 2px;
   transform-style: preserve-3d;
-  box-shadow: 
+  box-shadow:
     /* Multiple star positions and colors to simulate depth */
-    -411px -476px #cccccc, 
-    777px -407px #d4d4d4, 
-    -387px -477px #fcfcfc, 
+    -411px -476px #cccccc,
+    777px -407px #d4d4d4,
+    -387px -477px #fcfcfc,
     /* ... (Continue listing all box-shadows as per your original code) ... */
-    731px -403px #ededed, 
-    70px -534px #cccccc, 
-    -23px 510px #cfcfcf, 
-    -652px -237px whitesmoke, 
+    731px -403px #ededed,
+    70px -534px #cccccc,
+    -23px 510px #cfcfcf,
+    -652px -237px whitesmoke,
     /* Ensure to include all the box-shadow entries from your original code */
-    810px 536px #d1d1d1, 
-    774px 293px #c9c9c9, 
-    -362px 97px #c2c2c2, 
-    563px 47px #dedede, 
-    313px 475px #e0e0e0, 
-    839px -491px #e3e3e3, 
-    -217px 377px #d4d4d4, 
-    -581px 239px #c2c2c2, 
-    -857px 72px #cccccc, 
-    -23px 340px #dedede, 
-    -837px 246px white, 
-    170px -502px #cfcfcf, 
-    822px -443px #e0e0e0, 
-    795px 497px #e0e0e0, 
-    -814px -337px #cfcfcf, 
-    206px -339px #f2f2f2, 
-    -779px 108px #e6e6e6, 
-    808px 2px #d4d4d4, 
-    665px 41px #d4d4d4, 
-    -564px 64px #cccccc, 
-    -380px 74px #cfcfcf, 
-    -369px -60px #f7f7f7, 
-    47px -495px #e3e3e3, 
-    -383px 368px #f7f7f7, 
-    419px 288px #d1d1d1, 
-    -598px -50px #c2c2c2, 
-    -833px 187px #c4c4c4, 
-    378px 325px whitesmoke, 
-    -703px 375px #d6d6d6, 
-    392px 520px #d9d9d9, 
-    -492px -60px #c4c4c4, 
-    759px 288px #ebebeb, 
-    98px -412px #c4c4c4, 
+    810px 536px #d1d1d1,
+    774px 293px #c9c9c9,
+    -362px 97px #c2c2c2,
+    563px 47px #dedede,
+    313px 475px #e0e0e0,
+    839px -491px #e3e3e3,
+    -217px 377px #d4d4d4,
+    -581px 239px #c2c2c2,
+    -857px 72px #cccccc,
+    -23px 340px #dedede,
+    -837px 246px white,
+    170px -502px #cfcfcf,
+    822px -443px #e0e0e0,
+    795px 497px #e0e0e0,
+    -814px -337px #cfcfcf,
+    206px -339px #f2f2f2,
+    -779px 108px #e6e6e6,
+    808px 2px #d4d4d4,
+    665px 41px #d4d4d4,
+    -564px 64px #cccccc,
+    -380px 74px #cfcfcf,
+    -369px -60px #f7f7f7,
+    47px -495px #e3e3e3,
+    -383px 368px #f7f7f7,
+    419px 288px #d1d1d1,
+    -598px -50px #c2c2c2,
+    -833px 187px #c4c4c4,
+    378px 325px whitesmoke,
+    -703px 375px #d6d6d6,
+    392px 520px #d9d9d9,
+    -492px -60px #c4c4c4,
+    759px 288px #ebebeb,
+    98px -412px #c4c4c4,
     -911px -277px #c9c9c9;
-  
+
   /* Animations */
   transform: translate(-50%, -50%);
 }
@@ -147,6 +149,7 @@ body {
     transform: translateZ(-600px) translate(-50%, -50%);
     opacity: 0.5;
   }
+
   to {
     transform: translateZ(0) translate(-50%, -50%);
     opacity: 0.5;
@@ -158,6 +161,7 @@ body {
     transform: translateZ(-1200px) translate(-50%, -50%);
     opacity: 0.5;
   }
+
   to {
     transform: translateZ(-600px) translate(-50%, -50%);
     opacity: 0.5;
@@ -169,6 +173,7 @@ body {
     transform: translateZ(-1800px) translate(-50%, -50%);
     opacity: 0.5;
   }
+
   to {
     transform: translateZ(-1200px) translate(-50%, -50%);
     opacity: 0.5;
@@ -187,7 +192,8 @@ body {
   width: 100%;
   height: 120%;
   transform: rotate(210deg);
-  pointer-events: none; /* Allows clicks to pass through */
+  pointer-events: none;
+  /* Allows clicks to pass through */
   z-index: -1;
 }
 
@@ -212,7 +218,7 @@ body {
   filter: drop-shadow(0 0 6px currentColor);
   transform: translate3d(104em, 0, 0);
   animation: fall var(--fall-duration) var(--fall-delay) linear infinite,
-             tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+    tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
   color: var(--star-color);
 }
 
@@ -233,12 +239,15 @@ body {
 
 /* Keyframes for Tail Fade Animation */
 @keyframes tail-fade {
-  0%, 50% {
+
+  0%,
+  50% {
     width: var(--star-tail-length);
     opacity: 1;
   }
 
-  70%, 80% {
+  70%,
+  80% {
     width: 0;
     opacity: 0.4;
   }
@@ -272,9 +281,12 @@ body {
 }
 
 @keyframes blink {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.6;
   }
